@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -147,
+      "left": -497.8,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 169.4,
+      "left": 134.4,
+      "attrs": { "color": "green", "bounce": "0", "key": "2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 169.4,
+      "left": -9.6,
+      "attrs": { "color": "green", "bounce": "0", "key": "1" }
+    },
+    { "type": "wokwi-text", "id": "t1", "top": 211.2, "left": 9.6, "attrs": { "text": "Hour" } },
+    { "type": "wokwi-text", "id": "t2", "top": 211.2, "left": 144, "attrs": { "text": "Minute" } },
+    { "type": "wokwi-text", "id": "t3", "top": 96, "left": 48, "attrs": { "text": "Time/Alarm" } },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -149.2, "left": -169.7, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -157.2,
+      "left": -111.4,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw2", "top": 119.6, "left": 79.9, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "t4",
+      "top": -182.4,
+      "left": -172.8,
+      "attrs": { "text": "Alarm On/Off" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -89.6,
+      "left": -23.2,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "uno:2", "btn2:2.l", "magenta", [ "h28.8", "v138.3" ] ],
+    [ "uno:3", "btn1:2.r", "magenta", [ "h38.4", "v42.4", "h460.8", "v105.4" ] ],
+    [ "btn2:1.r", "btn1:1.l", "black", [ "v0" ] ],
+    [ "sw1:2", "led1:A", "orange", [ "v19.2", "h67.3", "v-19.2" ] ],
+    [ "sw2:2", "uno:4", "blue", [ "v9.6", "h-316.7", "v-128.7" ] ],
+    [ "sw1:1", "uno:5V", "red", [ "h-19.2", "v-86.4", "h-288", "v178.6" ] ],
+    [ "sw2:1", "btn2:1.r", "black", [ "v0" ] ],
+    [ "led1:C", "sw1:3", "black", [ "v9.6", "h-47.8" ] ],
+    [ "sw1:2", "uno:5", "orange", [ "v0" ] ],
+    [ "sw1:3", "uno:GND.1", "black", [ "v0" ] ],
+    [ "uno:5V", "sw2:3", "red", [ "h-19.1", "v263", "h575.8" ] ],
+    [ "lcd1:SCL", "uno:A5", "blue", [ "h-19.2", "v-191.7", "h-460.8", "v293.3" ] ],
+    [ "lcd1:SDA", "uno:A4", "cyan", [ "h-28.8", "v-172.6", "h-441.6", "v274.2" ] ],
+    [ "lcd1:VCC", "sw1:1", "red", [ "h0" ] ],
+    [ "lcd1:GND", "led1:C", "black", [ "h-76.8", "v-48" ] ],
+    [ "btn2:1.l", "lcd1:GND", "black", [ "h-19.2", "v-240" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -147,
+      "left": -497.8,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": -110.22,
+      "left": -4.52,
+      "attrs": { "color": "red", "digits": "4", "colon": "1", "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -62.95,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -43.75,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -5.35,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -24.55,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 13.85,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 52.25,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 33.05,
+      "left": -135.8,
+      "rotate": 180,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 159.8,
+      "left": 134.4,
+      "attrs": { "color": "green", "bounce": "0", "key": "2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 159.8,
+      "left": -9.6,
+      "attrs": { "color": "green", "bounce": "0", "key": "1" }
+    },
+    { "type": "wokwi-text", "id": "t1", "top": 201.6, "left": 9.6, "attrs": { "text": "Hour" } },
+    { "type": "wokwi-text", "id": "t2", "top": 201.6, "left": 144, "attrs": { "text": "Minute" } }
+  ],
+  "connections": [
+    [ "r6:1", "sevseg1:A", "green", [ "h326.4", "v-201.6", "h-178.44" ] ],
+    [ "r7:1", "sevseg1:B", "green", [ "h307.2", "v-163.2", "h-120.84" ] ],
+    [ "r3:1", "sevseg1:D", "green", [ "h67.2", "v0", "h19.2" ] ],
+    [ "r4:1", "sevseg1:E", "green", [ "h134.4", "v0", "h3.95" ] ],
+    [ "r2:1", "sevseg1:F", "green", [ "h48", "v-86.4", "h109.56" ] ],
+    [ "r1:1", "sevseg1:G", "green", [ "h28.8", "v-105.6", "h316.8", "v144", "h-168.84" ] ],
+    [ "uno:GND.1", "sevseg1:COM.2", "black", [ "h19.2", "v-95.7", "h220.8" ] ],
+    [ "r5:1", "sevseg1:C", "green", [ "h163.2", "v-57.6" ] ],
+    [ "sevseg1:DIG1", "uno:8", "white", [ "v-95.16", "h-282.35", "v191.6" ] ],
+    [ "sevseg1:DIG2", "uno:9", "white", [ "v-114.36", "h-320.76", "v200.8" ] ],
+    [ "sevseg1:DIG3", "uno:10", "white", [ "v-133.56", "h-339.96", "v210.5" ] ],
+    [ "sevseg1:DIG4", "uno:11", "white", [ "v115.2", "h-359.16", "v-115.8" ] ],
+    [ "r6:2", "uno:A0", "green", [ "h-18", "v96", "h-374.4", "v-128.6" ] ],
+    [ "r7:2", "uno:A1", "green", [ "h-27.6", "v105.6", "h-355.2", "v-109.5" ] ],
+    [ "r5:2", "uno:A2", "green", [ "h-37.2", "v115.2", "h-336", "v-90.4" ] ],
+    [ "r3:2", "uno:A3", "green", [ "h-46.8", "v124.8", "h-316.8", "v-71.3" ] ],
+    [ "r4:2", "uno:A4", "green", [ "h-56.4", "v134.4", "h-297.6", "v-52.2" ] ],
+    [ "r2:2", "uno:A5", "green", [ "h-66", "v144", "h-278.4", "v-33.1" ] ],
+    [ "r1:2", "uno:6", "green", [ "h-75.6", "v73.1" ] ],
+    [ "uno:2", "btn2:2.l", "magenta", [ "h28.8", "v138.3" ] ],
+    [ "uno:3", "btn1:2.r", "magenta", [ "h38.4", "v42.4", "h460.8", "v105.4" ] ],
+    [ "uno:GND.1", "btn2:1.l", "black", [ "h211.2", "v240.3" ] ],
+    [ "btn2:1.r", "btn1:1.l", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
