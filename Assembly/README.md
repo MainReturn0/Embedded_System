@@ -30,6 +30,9 @@ ld output_file.o -o program_name
 ```bash
 arm-none-eabi-as source_file.s -o output_file.o
 arm-none-eabi-ld output_file.o -o program_name
+
+# For microcontroller projects, you may need a linker script:
+arm-none-eabi-ld -T linker_script.ld output_file.o -o program_name
 ```
 
 ## Topics Covered
