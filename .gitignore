@@ -51,9 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Assembly
+# Assembly listing files (build artifacts)
 *.lst
-*.s
 
 # CMake
 CMakeCache.txt
